@@ -1,31 +1,13 @@
 public class Radio {
-    public int currentStation;
+    private int currentStation;
+    private int currentVolume;
 
-    public void minStation() {
-        currentStation = 0;
+    public int getCurrentStation() {
+        return currentStation;
     }
 
-    public void maxStation() {
-        currentStation = 9;
-    }
-
-    public void nextStationAfterMax(int newCurrentStation) {
-        if (newCurrentStation < 9) {
-            newCurrentStation = newCurrentStation + 1;
-        } else {
-            newCurrentStation = 0;
-        }
-        currentStation = newCurrentStation;
-
-    }
-
-    public void prevStation(int newCurrentStation) {
-        if (newCurrentStation > 0) {
-            newCurrentStation = newCurrentStation - 1;
-        } else {
-            newCurrentStation = 9;
-        }
-        currentStation = newCurrentStation;
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 
     public void setCurrentStation(int newCurrentStation) {
@@ -38,35 +20,62 @@ public class Radio {
         currentStation = newCurrentStation;
     }
 
-
-    public int currentVolume;
-
-    public void minVolume() {
-        currentVolume = 0;
-    }
-
-    public void maxVolume() {
-        currentVolume = 100;
-    }
-
-    public void increaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 100) {
-            newCurrentVolume = newCurrentVolume + 1;
-        } else {
-            newCurrentVolume = 100;
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < 0) {
+            return;
+        }
+        if (newCurrentVolume > 100) {
+            return;
         }
         currentVolume = newCurrentVolume;
     }
 
-    public void decreaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 0) {
-            newCurrentVolume = newCurrentVolume - 1;
+    public void setNextStationAfterMax() {
+        if (currentStation < 9) {
+            currentStation = currentStation + 1;
         } else {
-            newCurrentVolume = 0;
+            currentStation = 0;
         }
-        currentVolume = newCurrentVolume;
+    }
+
+    public void setPrevStation() {
+        if (currentStation > 0) {
+            currentStation = currentStation - 1;
+        } else {
+            currentStation = 9;
+        }
+    }
+
+    public void setIncreaseVolume() {
+        if (currentVolume < 100) {
+            currentVolume = currentVolume + 1;
+        } else {
+            currentVolume = 100;
+        }
+    }
+
+    public void setDecreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        } else {
+            currentVolume = 0;
+        }
+    }
+    public void setMinStation() {
+        currentStation = 0;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
