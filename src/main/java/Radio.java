@@ -61,9 +61,7 @@ public class Radio {
             currentVolume = 0;
         }
     }
-    public void setMinStation() {
-        currentStation = 0;
-    }
+
 }
 
 
