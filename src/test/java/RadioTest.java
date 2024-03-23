@@ -2,6 +2,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+
+    @Test
+    public void test() {
+        Radio rad = new Radio(30,29,0,100,0);
+        Assertions.assertEquals(30, rad.getQuantityStation());
+        Assertions.assertEquals(29, rad.getMaxStation());
+        Assertions.assertEquals(0, rad.getMinStation());
+        Assertions.assertEquals(100, rad.getMaxVolume());
+        Assertions.assertEquals(0, rad.getMinVolume());
+    }
+    @Test
+    public void testIF() {
+        Radio rad = new Radio();
+        Assertions.assertEquals(10, rad.getQuantityStation());
+        Assertions.assertEquals(9, rad.getMaxStation());
+        Assertions.assertEquals(0, rad.getMinStation());
+    }
     @Test
     public void shouldSetCurrentStation() {
         Radio rad = new Radio();
@@ -10,7 +27,6 @@ public class RadioTest {
         int actual = rad.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @Test
     public void shouldSetCurrentStationIfMore() {
         Radio rad = new Radio();
@@ -136,6 +152,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 }
+
 
 
 
