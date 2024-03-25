@@ -5,12 +5,10 @@ public class RadioTest {
 
     @Test
     public void test() {
-        Radio rad = new Radio(30,29,0,100,0);
-        Assertions.assertEquals(30, rad.getQuantityStation());
-        Assertions.assertEquals(29, rad.getMaxStation());
-        Assertions.assertEquals(0, rad.getMinStation());
-        Assertions.assertEquals(100, rad.getMaxVolume());
-        Assertions.assertEquals(0, rad.getMinVolume());
+        Radio rad = new Radio(10);
+        Assertions.assertEquals(10, rad.getQuantityStation());
+        Assertions.assertEquals(9, rad.getMaxStation());
+        Assertions.assertEquals(0,rad.getMinStation());
     }
     @Test
     public void testIF() {
